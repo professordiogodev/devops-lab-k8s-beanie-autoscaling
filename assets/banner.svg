@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="346" viewBox="0 0 1000 346" role="img" aria-label="Kubernetes: The Lunch Rush">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#431407"/><stop offset="1" stop-color="#c2410c"/></linearGradient><radialGradient id="glow" cx=".85" cy=".5" r=".6"><stop offset="0" stop-color="#a7f3d0" stop-opacity=".28"/><stop offset="1" stop-color="#a7f3d0" stop-opacity="0"/></radialGradient></defs>
+<rect width="1000" height="346" rx="18" fill="url(#bg)"/><rect width="1000" height="346" rx="18" fill="url(#glow)"/>
+<circle cx="60" cy="40" r="3" fill="#a7f3d0" opacity=".7"><animate attributeName="opacity" values=".2;.9;.2" dur="3s" repeatCount="indefinite"/></circle>
+<text x="48" y="64" font-size="14" letter-spacing="3" fill="#a7f3d0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-weight="700">DEVOPS BOOTCAMP · LAB</text>
+<text x="48" y="112" font-size="40" font-weight="800" fill="#ffffff" font-family="Segoe UI,Helvetica,Arial,sans-serif">Kubernetes: The Lunch</text>
+<text x="48" y="160" font-size="40" font-weight="800" fill="#ffffff" font-family="Segoe UI,Helvetica,Arial,sans-serif">Rush</text>
+<text x="48" y="190" font-size="15" fill="#e2e8f0" opacity=".92" font-family="Segoe UI,Helvetica,Arial,sans-serif">At noon every office orders coffee at once. A fixed number of pods</text>
+<text x="48" y="212" font-size="15" fill="#e2e8f0" opacity=".92" font-family="Segoe UI,Helvetica,Arial,sans-serif">melts, a huge number wastes money. Set honest resource requests, add a</text>
+<text x="48" y="234" font-size="15" fill="#e2e8f0" opacity=".92" font-family="Segoe UI,Helvetica,Arial,sans-serif">HorizontalPodAutoscaler, throw a lunch rush at the cluster and watch</text>
+<text x="48" y="256" font-size="15" fill="#e2e8f0" opacity=".92" font-family="Segoe UI,Helvetica,Arial,sans-serif">it grow and then shrink by itself.</text>
+<rect x="48" y="288" width="105" height="32" rx="16" fill="#ffffff" fill-opacity=".14" stroke="#a7f3d0" stroke-opacity=".7"/><text x="62" y="309" font-size="14" fill="#ffffff" font-family="Segoe UI,Helvetica,Arial,sans-serif">75-90 min</text>
+<rect x="165" y="288" width="277" height="32" rx="16" fill="#ffffff" fill-opacity=".14" stroke="#a7f3d0" stroke-opacity=".7"/><text x="179" y="309" font-size="14" fill="#ffffff" font-family="Segoe UI,Helvetica,Arial,sans-serif">Cost: free on a local cluster</text>
+<g transform="translate(750,73)">
+<path d="M12 180 H210 M12 180 V20" stroke="#a7f3d0" stroke-opacity=".6" stroke-width="3" fill="none"/>
+<rect x="30" y="180" width="24" height="0" rx="4" fill="#a7f3d0" opacity=".9"><animate attributeName="height" values="0;50;50;0" keyTimes="0;.4;.85;1" dur="5s" begin="-2.20s" repeatCount="indefinite"/><animate attributeName="y" values="180;130;130;180" keyTimes="0;.4;.85;1" dur="5s" begin="-2.20s" repeatCount="indefinite"/></rect>
+<rect x="66" y="180" width="24" height="0" rx="4" fill="#a7f3d0" opacity=".9"><animate attributeName="height" values="0;80;80;0" keyTimes="0;.4;.85;1" dur="5s" begin="-1.85s" repeatCount="indefinite"/><animate attributeName="y" values="180;100;100;180" keyTimes="0;.4;.85;1" dur="5s" begin="-1.85s" repeatCount="indefinite"/></rect>
+<rect x="102" y="180" width="24" height="0" rx="4" fill="#a7f3d0" opacity=".9"><animate attributeName="height" values="0;70;70;0" keyTimes="0;.4;.85;1" dur="5s" begin="-1.50s" repeatCount="indefinite"/><animate attributeName="y" values="180;110;110;180" keyTimes="0;.4;.85;1" dur="5s" begin="-1.50s" repeatCount="indefinite"/></rect>
+<rect x="138" y="180" width="24" height="0" rx="4" fill="#a7f3d0" opacity=".9"><animate attributeName="height" values="0;110;110;0" keyTimes="0;.4;.85;1" dur="5s" begin="-1.15s" repeatCount="indefinite"/><animate attributeName="y" values="180;70;70;180" keyTimes="0;.4;.85;1" dur="5s" begin="-1.15s" repeatCount="indefinite"/></rect>
+<rect x="174" y="180" width="24" height="0" rx="4" fill="#a7f3d0" opacity=".9"><animate attributeName="height" values="0;140;140;0" keyTimes="0;.4;.85;1" dur="5s" begin="-0.80s" repeatCount="indefinite"/><animate attributeName="y" values="180;40;40;180" keyTimes="0;.4;.85;1" dur="5s" begin="-0.80s" repeatCount="indefinite"/></rect>
+</g>
+</svg>
