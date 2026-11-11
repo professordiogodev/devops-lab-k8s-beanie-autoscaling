@@ -2,9 +2,18 @@
 
 ## The situation
 
+```text
+MISSION BRIEFING - Operation Lunch Rush
+Arena      : the Beanie namespace on your local cluster
+Boss       : the lunch rush, 12:00 sharp, sixteen threads per rush pod
+Your side  : two Deployments (gateway, menu) and whatever you teach them
+Scoreboard : seconds until the first new pod, seconds until it is Ready, highest replica count
+Rounds     : 0 boot   1 scout   2 defences   BOSS   4 cooldown   5 final
+```
+
 Beanie works. Then it is noon, a whole office opens the app at the same moment, and the gateway pods hit their CPU ceiling. Latency climbs from 40 ms to 4 seconds, customers refresh, which makes it worse, and the on-call engineer scales the Deployment by hand: `kubectl scale --replicas=10`. At 14:00 nobody remembers to scale it back down, and the cluster stays big all weekend.
 
-Kubernetes can do both of those things by itself, but only if you tell it **how much each pod really needs** (the *request*) and **when to add or remove pods** (a *HorizontalPodAutoscaler*, the HPA). Both numbers are decisions you make with data, not guesses. Today you measure, decide, throw a lunch rush at the cluster, and watch it grow and then shrink without you.
+Kubernetes can do both of those things by itself, but only if you tell it **how much each pod really needs** (the *request*) and **when to add or remove pods** (a *HorizontalPodAutoscaler*, the HPA). Both numbers are decisions you make with data, not guesses. Today you scout, build your defences, face the rush, and watch the cluster grow and then shrink without you.
 
 > **Your mission**
 > - Measure what the gateway and the menu service really use
@@ -17,7 +26,7 @@ Kubernetes can do both of those things by itself, but only if you tell it **how 
 
 ---
 
-## Part 0 - Get Beanie running, and a way to measure
+## Round 0 - Boot the arena
 
 Fork this repository, clone your fork, and run:
 
@@ -32,7 +41,7 @@ kubectl get pods -n beanie -w
 
 ---
 
-## Part 1 - Measure
+## Round 1 - Scout: measure what each pod really uses
 
 ```bash
 kubectl top pods -n beanie
@@ -51,7 +60,7 @@ In another terminal, `kubectl top pods -n beanie` a few times. Note the CPU of o
 
 ---
 
-## Part 2 - Requests and HPAs
+## Round 2 - Build your defences: requests and HPAs
 
 1. In `k8s/base/gateway.yaml` and `k8s/base/menu.yaml` set a CPU request between **50m and 250m** that matches what you measured (a pod at rest should sit well below it; a pod doing real work should approach it). Apply.
 2. Write `k8s/hpa.yaml` with **two** `HorizontalPodAutoscaler`s (`autoscaling/v2`): one for `gateway`, one for `menu`.
@@ -71,7 +80,7 @@ The HPA shows `<unknown>/60%` for a minute or so, then a real number. If it stay
 
 ---
 
-## Part 3 - The rush
+## Boss fight - The rush
 
 Open two terminals. In the first, watch:
 
@@ -95,7 +104,7 @@ Each rush pod asks the gateway for the menu with 16 threads at once. Watch the H
 
 ---
 
-## Part 4 - The rush ends
+## Round 4 - The cooldown: the rush ends
 
 ```bash
 kubectl scale -n beanie deployment/lunch-rush --replicas=0
@@ -107,7 +116,7 @@ Keep watching. The metrics drop immediately, but the pods do not: the HPA waits 
 
 ---
 
-## Part 5 - Prove it
+## Final - Prove it
 
 ```bash
 ./verify.sh
